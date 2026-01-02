@@ -15,16 +15,16 @@ data = {
 }
 
 rules = {
-  name: ["required", "min:3"], => ["min",#]
-  email: ["required", "email"], => ["email"]
+  name: ["required", "min:3"],
+  email: ["required", "email"],
   password: ["required", "min:6"]
 }
 
-output esperado
+// Output esperado:
 {
-  name: [],
+  name: ["Field empty", "Min length is 3"],
   email: ["Invalid email"],
-  password: ["Min length is 8"]
+  password: ["Min length is 6"]
 }
 */
 
