@@ -1,33 +1,3 @@
-/*
-Construir un validador de formularios reutilizable en JavaScript que pueda 
-usarse tanto en frontend como en backend (lógica pura).
-validate(data, rules)
-
-Reglas que debe soportar (mínimo)
-- required
-- min:n
-- email
-
-data = {
-  name: "Jason",
-  email: "jason@email.com",
-  password: "123456"
-}
-
-rules = {
-  name: ["required", "min:3"],
-  email: ["required", "email"],
-  password: ["required", "min:6"]
-}
-
-// Output esperado:
-{
-  name: ["Field empty", "Min length is 3"],
-  email: ["Invalid email"],
-  password: ["Min length is 6"]
-}
-*/
-
 type StaticRule = "required" | "email" | "url" | "numeric";
 type DynamicRule = `min:${number}` | `max:${number}` | `length:${number}`;
 
@@ -43,32 +13,32 @@ type rulesStructure = {
   [key: string]: ValidationRule[];
 };
 
-// My solution
+// /* My solution */
 // function validateRule(rule: ValidationRule[], data: dataValueStructure) {
 //   const [[dataKey, dataValue]] = Object.entries(data);
 //   rule.map((r) => {
-//     // Field empty validation
+//     /* Field empty validation */
 //     if (r === "required" && dataValue === "") {
 //       console.error(new Error(`Field required: [${dataKey}]  is empty`));
 //     }
 
-//     // Field lenght validations
-//     // Min length
+//     /* Field lenght validations */
+//     /* Min length */
 //     if (r.includes("min") && dataValue.length < r.split(":")[1]) {
 //       console.error(new Error(`field [${dataKey}] has to be at least: ${r.split(":")[1]}`));
 //     }
-//     // Max length
+//     /* Max length */
 //     if (r.includes("max") && dataValue.length > r.split(":")[1]) {
 //       console.error(new Error(`field [${dataKey}] has to be max: ${r.split(":")[1]}`));
 //     }
 
-//     //Exact length
+//     /* Exact length */
 //     if (r.includes("length") && dataValue.length === r.split(":")[1]) {
 //       console.error(new Error(`field [${dataKey}] has to be exact length: ${r.split(":")[1]}`));
 //     }
 //   });
 // }
-
+//
 // function validate(data: any, rules: rulesStructure) {
 //   for (const key in data) {
 //     if (rules[key] === undefined) {
@@ -79,7 +49,7 @@ type rulesStructure = {
 //   }
 // }
 
-//Refactored solution after AI feedback
+//** Refactored solution after AI feedback
 const ruleHandlers = {
   required: (value: string) => {
     if (value === "" || value === null || value === undefined) {

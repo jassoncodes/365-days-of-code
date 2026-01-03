@@ -16,7 +16,7 @@ The validation logic must be framework-agnostic and based on configurable rules 
 
 ---
 
-## 🧠 Context (tipo prueba técnica)
+## 🧠 Context
 
 > “We need to validate data before sending it to the backend.
 > The system must be flexible, extensible, and reusable in both the frontend and the backend.”
