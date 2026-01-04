@@ -1,5 +1,7 @@
 # 365 Days of Code 🚀
 
+![365-of-code-challenge-begins](./challenge-begins.png)
+
 Welcome to my **365 Days of Code Challenge**.
 
 This is a personal initiative focused on **consistent practice, real problem-solving, and learning in public** to grow as a **Full Stack Developer**.
